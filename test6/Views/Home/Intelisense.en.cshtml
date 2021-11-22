@@ -1,0 +1,42 @@
+@using Microsoft.AspNetCore.Mvc.Localization
+@model ErrorViewModel
+@inject IViewLocalizer _localizer
+
+@{
+    ViewBag.Title = "Error view model wersja EN";
+    Layout = "_Layout";
+}
+
+<h2>Error view model</h2>
+
+<p>@Model.RequestId</p>
+
+@{
+    Html.RenderPartial("MyFirstPartial"); 
+}
+
+@{
+    Html.RenderPartial("MySecondPartial.cshtml"); 
+}
+
+@{
+    Html.RenderPartial("~/Views/CustomLayout/MyThirdPartial.cshtml"); 
+}
+
+@{
+    Html.RenderPartial("../MyFourthPartial.cshtml"); 
+}
+
+@section UnikatowaNazwaSekcji2
+{
+    <p>Sekcja druga</p>
+}
+
+@section UnikatowaNazwaSekcji1
+{
+    <p>To jest sekcja pierwsza</p>
+}
+
+<p>
+    @_localizer["pewien tekst do przetłumaczenia"]
+</p>

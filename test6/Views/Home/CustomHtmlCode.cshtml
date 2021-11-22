@@ -1,0 +1,40 @@
+@using Microsoft.Extensions.Logging
+@using test6.Controllers
+@model string
+@inject ILogger<HomeController> Logger
+
+@{
+    ViewBag.Title = "Custom Html Code";
+    Layout = "_Layout";
+    int x = 5;
+}
+
+@functions
+{
+    int sum(int a, int b)
+    {
+        return a + b; 
+    }
+}
+
+<h2>Custom Html Code</h2>
+
+@Html.Raw(Model)
+
+@(2+3)
+
+@if (x == 5)
+{
+    @x
+}
+
+@for (int i = 0; i < x; i++)
+{
+    @: wartośc: @i
+    @: suma: @sum(i, i)
+}
+
+@using (Html.BeginForm())
+{
+    
+}
